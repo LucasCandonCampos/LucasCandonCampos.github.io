@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 
@@ -12,31 +13,35 @@ export const metadata: Metadata = {
   },
 };
 
-const projects = [
+function ArrowIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M7 17 17 7M8 7h9v9" />
+    </svg>
+  );
+}
+
+const moreProjects = [
   {
-    period: 'February 2026 — present',
-    name: 'CampusFuel',
+    name: 'Outclass',
+    label: 'Canvas × Telegram',
     description:
-      'A nutrition-tracking app that lets students log dining hall food using real-time, campus-specific menu data. I built the core product and data pipeline, recruited product and marketing contributors, and led the rollout from Virginia Tech to nationwide availability.',
-    result:
-      'Available across 400+ universities representing 4M+ students; acquired 1,000+ paid users in the first month nationwide.',
+      'An AI assistant that turns Canvas assignments, grades, syllabi, and deadlines into a useful conversation inside Telegram.',
+    href: 'https://github.com/LucasCandonCampos/outclass',
   },
   {
-    period: 'January 2026 — May 2026',
-    name: 'BernieBot',
-    context: 'IBM Experiential Learning Lab',
+    name: 'Bernie',
+    label: 'Market intelligence',
     description:
-      'An agentic AI system that monitors portfolios for high-signal price, news, and volume events, then produces personalized investor insights. Its event-triggered architecture calls deeper analysis only when a meaningful change occurs.',
-    result:
-      'Led a four-person team from ideation through deployment, including the roadmap, standups, and task delegation.',
+      'A Telegram-native market analyst that monitors stocks and crypto, surfaces meaningful events, and produces investor briefings.',
+    href: 'https://github.com/LucasCandonCampos/Bernie',
   },
   {
-    period: 'January 2026',
-    name: 'UFC Fight Predictor',
-    href: 'https://github.com/LucasCandonCampos/ufc-predictor',
+    name: 'Kató',
+    label: 'Language learning',
     description:
-      'An end-to-end machine learning pipeline built from more than 7,000 fights and 65 matchup features across fighter performance, ratings, style, cardio, and durability. The project includes automated data collection, model retraining, SHAP explanations, and live prediction-market comparisons.',
-    result: 'Reached 67.7% winner-prediction accuracy on held-out 2023–2026 data.',
+      'A messaging-native conversation partner for practicing Spanish and Portuguese through text, voice notes, and live calls.',
+    href: 'https://github.com/LucasCandonCampos/kato-agent',
   },
 ];
 
@@ -44,35 +49,164 @@ export default function ProjectsPage() {
   return (
     <>
       <SiteHeader />
-      <main className="page-content" aria-labelledby="projects-title">
-        <div className="wrapper">
+      <main className="projects-page" aria-labelledby="projects-title">
+        <div className="wrapper projects-intro">
           <h1 className="page-heading" id="projects-title">
             Projects
           </h1>
-          <ul className="post-list project-page-list">
-            {projects.map((project) => (
-              <li key={project.name}>
-                <span className="post-meta">{project.period}</span>
-                <h2>
-                  {project.href ? (
-                    <a
-                      className="post-link"
-                      href={project.href}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {project.name}
-                    </a>
-                  ) : (
-                    <span className="post-link plain-title">{project.name}</span>
-                  )}
-                </h2>
-                {project.context ? <p className="project-context">{project.context}</p> : null}
-                <p>{project.description}</p>
-                <p className="project-result">{project.result}</p>
-              </li>
-            ))}
-          </ul>
+          <p>A selection of products, experiments, and systems I have built.</p>
+        </div>
+
+        <div className="projects-gallery">
+          <article className="visual-project-card campus-card">
+            <div className="visual-project-heading">
+              <div>
+                <p className="project-eyebrow">Featured project</p>
+                <h2>CampusFuel</h2>
+                <p>Campus dining nutrition, built for real university menus.</p>
+              </div>
+              <a
+                className="project-arrow"
+                href="https://lucascandoncampos.github.io/hokiecals-app/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open CampusFuel"
+              >
+                <ArrowIcon />
+              </a>
+            </div>
+
+            <div className="campus-screens" aria-label="CampusFuel product screens">
+              <figure className="phone-shot phone-shot-left">
+                <Image
+                  src="/projects/campusfuel-progress.webp"
+                  alt="CampusFuel progress and streak screen"
+                  width={946}
+                  height={2048}
+                />
+              </figure>
+              <figure className="phone-shot phone-shot-center">
+                <Image
+                  src="/projects/campusfuel-home.webp"
+                  alt="CampusFuel calorie and macro dashboard"
+                  width={946}
+                  height={2048}
+                  priority
+                />
+              </figure>
+              <figure className="phone-shot phone-shot-right">
+                <Image
+                  src="/projects/campusfuel-menu.webp"
+                  alt="CampusFuel dining hall selection screen"
+                  width={946}
+                  height={2048}
+                />
+              </figure>
+              <span className="image-note">Early HokieCals product screens</span>
+            </div>
+          </article>
+
+          <article className="visual-project-card ufc-card">
+            <div className="visual-project-heading">
+              <div>
+                <p className="project-eyebrow">Machine learning</p>
+                <h2>UFC Fight Predictor</h2>
+                <p>7,253 fights. 65 features. 67.7% held-out accuracy.</p>
+              </div>
+              <a
+                className="project-arrow"
+                href="https://github.com/LucasCandonCampos/ufc-predictor"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View UFC Fight Predictor on GitHub"
+              >
+                <ArrowIcon />
+              </a>
+            </div>
+
+            <div className="ufc-visuals">
+              <figure className="data-figure calibration-figure">
+                <Image
+                  src="/projects/ufc-calibration.png"
+                  alt="Calibration chart comparing UFC model probabilities before and after isotonic correction"
+                  width={900}
+                  height={900}
+                />
+              </figure>
+              <figure className="data-figure feature-figure">
+                <Image
+                  src="/projects/ufc-feature-importance.png"
+                  alt="Ranked feature importance chart for the UFC prediction model"
+                  width={1200}
+                  height={2925}
+                />
+              </figure>
+            </div>
+          </article>
+
+          <article className="visual-project-card kalshi-card">
+            <div className="visual-project-heading">
+              <div>
+                <p className="project-eyebrow">AI agent</p>
+                <h2>Kalshi Agent</h2>
+                <p>A prediction-market trading agent that lives in iMessage.</p>
+              </div>
+              <a
+                className="project-arrow"
+                href="https://github.com/LucasCandonCampos/kalshi-agent"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View Kalshi Agent on GitHub"
+              >
+                <ArrowIcon />
+              </a>
+            </div>
+
+            <div className="kalshi-visual">
+              <figure className="message-shot">
+                <Image
+                  src="/projects/kalshi-imessage.png"
+                  alt="Kalshi Agent answering market and portfolio questions in iMessage"
+                  width={1816}
+                  height={1828}
+                />
+              </figure>
+            </div>
+          </article>
+
+          <section className="more-projects" aria-labelledby="more-projects-title">
+            <div className="more-projects-heading">
+              <div>
+                <p className="project-eyebrow">From GitHub</p>
+                <h2 id="more-projects-title">More builds</h2>
+              </div>
+              <a
+                href="https://github.com/LucasCandonCampos?tab=repositories"
+                target="_blank"
+                rel="noreferrer"
+              >
+                All repositories
+              </a>
+            </div>
+            <div className="more-projects-grid">
+              {moreProjects.map((project) => (
+                <a
+                  className="small-project-card"
+                  href={project.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={project.name}
+                >
+                  <span className="small-project-label">{project.label}</span>
+                  <span className="small-project-title">
+                    {project.name}
+                    <ArrowIcon />
+                  </span>
+                  <span className="small-project-description">{project.description}</span>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
       </main>
       <SiteFooter />
