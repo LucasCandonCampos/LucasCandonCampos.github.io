@@ -21,27 +21,30 @@ function ArrowIcon() {
   );
 }
 
-const moreProjects = [
+const additionalProjects = [
   {
     name: 'Outclass',
-    label: 'Canvas × Telegram',
+    label: 'AI assistant',
     description:
-      'An AI assistant that turns Canvas assignments, grades, syllabi, and deadlines into a useful conversation inside Telegram.',
+      'Canvas assignments, grades, syllabi, and deadlines inside Telegram.',
     href: 'https://github.com/LucasCandonCampos/outclass',
+    tone: 'outclass-placeholder',
   },
   {
     name: 'Bernie',
     label: 'Market intelligence',
     description:
-      'A Telegram-native market analyst that monitors stocks and crypto, surfaces meaningful events, and produces investor briefings.',
+      'An always-on market analyst for stocks and crypto inside Telegram.',
     href: 'https://github.com/LucasCandonCampos/Bernie',
+    tone: 'bernie-placeholder',
   },
   {
     name: 'Kató',
     label: 'Language learning',
     description:
-      'A messaging-native conversation partner for practicing Spanish and Portuguese through text, voice notes, and live calls.',
+      'A language partner for text, voice notes, and live calls.',
     href: 'https://github.com/LucasCandonCampos/kato-agent',
+    tone: 'kato-placeholder',
   },
 ];
 
@@ -179,39 +182,29 @@ export default function ProjectsPage() {
             </div>
           </article>
 
-          <section className="more-projects" aria-labelledby="more-projects-title">
-            <div className="more-projects-heading">
-              <div>
-                <p className="project-eyebrow">From GitHub</p>
-                <h2 id="more-projects-title">More builds</h2>
-              </div>
-              <a
-                href="https://github.com/LucasCandonCampos?tab=repositories"
-                target="_blank"
-                rel="noreferrer"
-              >
-                All repositories
-              </a>
-            </div>
-            <div className="more-projects-grid">
-              {moreProjects.map((project) => (
+          {additionalProjects.map((project) => (
+            <article className="visual-project-card pending-visual-card" key={project.name}>
+              <div className="visual-project-heading">
+                <div>
+                  <p className="project-eyebrow">{project.label}</p>
+                  <h2>{project.name}</h2>
+                  <p>{project.description}</p>
+                </div>
                 <a
-                  className="small-project-card"
+                  className="project-arrow"
                   href={project.href}
                   target="_blank"
                   rel="noreferrer"
-                  key={project.name}
+                  aria-label={`View ${project.name} on GitHub`}
                 >
-                  <span className="small-project-label">{project.label}</span>
-                  <span className="small-project-title">
-                    {project.name}
-                    <ArrowIcon />
-                  </span>
-                  <span className="small-project-description">{project.description}</span>
+                  <ArrowIcon />
                 </a>
-              ))}
-            </div>
-          </section>
+              </div>
+              <div className={`project-image-placeholder ${project.tone}`}>
+                <span>Project image coming soon</span>
+              </div>
+            </article>
+          ))}
         </div>
       </main>
       <SiteFooter />
