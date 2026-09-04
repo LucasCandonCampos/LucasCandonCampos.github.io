@@ -6,7 +6,10 @@ export function SiteFooter() {
       <div className="wrapper footer-columns">
         <ul className="contact-list">
           <li>
-            <a href="mailto:lucascandoncampos@gmail.com">
+            <a
+              href="mailto:lucascandoncampos@gmail.com"
+              aria-label="Email Lucas Candon-Campos"
+            >
               <Mail className="contact-icon" aria-hidden="true" />
               <span>lucascandoncampos@gmail.com</span>
             </a>
@@ -16,6 +19,7 @@ export function SiteFooter() {
               href="https://www.linkedin.com/in/lucascandon"
               target="_blank"
               rel="noreferrer"
+              aria-label="Visit Lucas Candon-Campos on LinkedIn"
             >
               <svg
                 className="contact-icon"
@@ -35,6 +39,7 @@ export function SiteFooter() {
               href="https://github.com/LucasCandonCampos"
               target="_blank"
               rel="noreferrer"
+              aria-label="Visit Lucas Candon-Campos on GitHub"
             >
               <svg
                 className="contact-icon"

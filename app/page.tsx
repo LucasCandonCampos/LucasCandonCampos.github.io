@@ -79,8 +79,8 @@ export default function Home() {
 
               <p>
                 I enjoy meeting people building thoughtful products.{' '}
-                <a href="mailto:lucascandoncampos@gmail.com">Reach out</a> if you
-                want to work together or compare notes.
+                <a href="mailto:lucascandoncampos@gmail.com">Reach out to me</a>{' '}
+                if you want to work together or just want to chat.
               </p>
             </div>
           </article>
