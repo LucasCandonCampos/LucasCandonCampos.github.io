@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 const pages = [
   { href: '/projects', label: 'Projects' },
   { href: '/writing', label: 'Writing' },
@@ -7,9 +5,9 @@ const pages = [
 
 function MenuLinks() {
   return pages.map((page) => (
-    <Link className="page-link" href={page.href} key={page.href}>
+    <a className="page-link" href={page.href} key={page.href}>
       {page.label}
-    </Link>
+    </a>
   ));
 }
 
@@ -17,9 +15,9 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="wrapper header-wrapper">
-        <Link className="site-title" href="/">
+        <a className="site-title" href="/">
           Lucas Candon-Campos
-        </Link>
+        </a>
 
         <nav className="site-nav desktop-nav" aria-label="Main navigation">
           <MenuLinks />
