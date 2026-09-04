@@ -50,10 +50,9 @@ export default function Home() {
               </p>
 
               <p>
-                I like turning messy problems into useful products. My recent work
-                includes a portfolio-monitoring system that connects to my
-                Robinhood account and a machine learning model trained on more than
-                7,000 UFC fights. You can see more on my{' '}
+                My recent work includes a portfolio-monitoring system that connects
+                to my Robinhood account and a machine learning model trained on more
+                than 7,000 UFC fights. You can see more on my{' '}
                 <a href="/projects/">projects page</a>.
               </p>
 
