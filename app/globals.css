@@ -265,19 +265,20 @@ img {
 
 .footer-columns {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 30px;
   color: var(--muted);
   font-size: 15px;
 }
 
 .contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 5px;
   margin: 0;
   list-style: none;
-}
-
-.contact-list li + li {
-  padding-top: 5px;
 }
 
 .contact-list a {

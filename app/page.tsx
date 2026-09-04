@@ -38,9 +38,8 @@ export default function Home() {
 
               <p>
                 I work on the product end to end, from the data pipeline behind
-                real-time dining menus to the campus-focused partnerships that
-                helped CampusFuel reach 1,000+ paid users in its first month of
-                nationwide availability.
+                real-time dining menus to the marketing and growth strategy that
+                helped CampusFuel scale to thousands of users.
               </p>
 
               <p>
@@ -52,9 +51,10 @@ export default function Home() {
 
               <p>
                 I like turning messy problems into useful products. My recent work
-                includes an agentic portfolio-monitoring system and a machine
-                learning model trained on more than 7,000 UFC fights. You can see
-                more on my <a href="/projects">projects page</a>.
+                includes a portfolio-monitoring system that connects to my
+                Robinhood account and a machine learning model trained on more than
+                7,000 UFC fights. You can see more on my{' '}
+                <a href="/projects">projects page</a>.
               </p>
 
               <p>
