@@ -1,5 +1,5 @@
 const pages = [
-  { href: '/projects', label: 'Projects' },
+  { href: '/projects/', label: 'Projects' },
 ];
 
 function MenuLinks() {

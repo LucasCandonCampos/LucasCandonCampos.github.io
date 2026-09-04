@@ -31,7 +31,7 @@ export default function Home() {
               </p>
 
               <p>
-                I founded <a href="/projects">CampusFuel</a>, a nutrition-tracking
+                I founded <a href="/projects/">CampusFuel</a>, a nutrition-tracking
                 app that lets students log dining hall food. It now supports 400+
                 universities representing more than 4 million students nationwide.
               </p>
@@ -54,7 +54,7 @@ export default function Home() {
                 includes a portfolio-monitoring system that connects to my
                 Robinhood account and a machine learning model trained on more than
                 7,000 UFC fights. You can see more on my{' '}
-                <a href="/projects">projects page</a>.
+                <a href="/projects/">projects page</a>.
               </p>
 
               <p>

@@ -2,6 +2,10 @@ import type { Metadata } from 'next';
 import { Lora } from 'next/font/google';
 import './globals.css';
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  'https://lucas-candon-campos.testlogix.chatgpt.site';
+
 const lora = Lora({
   variable: '--font-lora',
   subsets: ['latin'],
@@ -9,7 +13,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lucas-candon-campos.testlogix.chatgpt.site'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Lucas Candon-Campos',
     template: '%s | Lucas Candon-Campos',
