@@ -60,7 +60,7 @@ export default function ProjectsPage() {
           <p>A selection of products, experiments, and systems I have built.</p>
         </div>
 
-        <div className="projects-gallery">
+        <div className="wrapper projects-gallery">
           <article className="visual-project-card campus-card">
             <div className="visual-project-heading">
               <div>
