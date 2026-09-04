@@ -1,5 +1,5 @@
+/* oxlint-disable next/no-img-element -- vinext's next/image shim currently breaks hydration. */
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 
@@ -78,28 +78,30 @@ export default function ProjectsPage() {
 
             <div className="campus-screens" aria-label="CampusFuel product screens">
               <figure className="phone-shot phone-shot-left">
-                <Image
+                <img
                   src="/projects/campusfuel-progress.webp"
                   alt="CampusFuel progress and streak screen"
                   width={946}
                   height={2048}
+                  loading="lazy"
                 />
               </figure>
               <figure className="phone-shot phone-shot-center">
-                <Image
+                <img
                   src="/projects/campusfuel-home.webp"
                   alt="CampusFuel calorie and macro dashboard"
                   width={946}
                   height={2048}
-                  priority
+                  fetchPriority="high"
                 />
               </figure>
               <figure className="phone-shot phone-shot-right">
-                <Image
+                <img
                   src="/projects/campusfuel-menu.webp"
                   alt="CampusFuel dining hall selection screen"
                   width={946}
                   height={2048}
+                  loading="lazy"
                 />
               </figure>
               <span className="image-note">Early HokieCals product screens</span>
@@ -126,19 +128,21 @@ export default function ProjectsPage() {
 
             <div className="ufc-visuals">
               <figure className="data-figure calibration-figure">
-                <Image
+                <img
                   src="/projects/ufc-calibration.png"
                   alt="Calibration chart comparing UFC model probabilities before and after isotonic correction"
                   width={900}
                   height={900}
+                  loading="lazy"
                 />
               </figure>
               <figure className="data-figure feature-figure">
-                <Image
+                <img
                   src="/projects/ufc-feature-importance.png"
                   alt="Ranked feature importance chart for the UFC prediction model"
                   width={1200}
                   height={2925}
+                  loading="lazy"
                 />
               </figure>
             </div>
@@ -164,11 +168,12 @@ export default function ProjectsPage() {
 
             <div className="kalshi-visual">
               <figure className="message-shot">
-                <Image
+                <img
                   src="/projects/kalshi-imessage.png"
                   alt="Kalshi Agent answering market and portfolio questions in iMessage"
                   width={1816}
                   height={1828}
+                  loading="lazy"
                 />
               </figure>
             </div>
