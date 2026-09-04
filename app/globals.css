@@ -218,6 +218,34 @@ img {
   margin-bottom: 8px;
 }
 
+.minimalist-project-list .post-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35em;
+  color: var(--foreground);
+}
+
+.minimalist-project-list .post-link:visited {
+  color: var(--foreground);
+}
+
+.minimalist-project-list .post-link:hover {
+  color: var(--foreground);
+}
+
+.project-link-arrow {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 0.72em;
+  line-height: 1;
+  transition: color 120ms ease, transform 120ms ease;
+}
+
+.minimalist-project-list .post-link:hover .project-link-arrow {
+  color: var(--foreground);
+  transform: translate(1px, -1px);
+}
+
 .minimalist-project-list p {
   margin-bottom: 0;
   color: var(--heading);

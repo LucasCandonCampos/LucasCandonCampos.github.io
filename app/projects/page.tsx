@@ -65,6 +65,9 @@ export default function ProjectsPage() {
                     rel="noreferrer"
                   >
                     {project.name}
+                    <span className="project-link-arrow" aria-hidden="true">
+                      ↗
+                    </span>
                   </a>
                 </h2>
                 <p>{project.description}</p>
