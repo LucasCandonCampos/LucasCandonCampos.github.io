@@ -297,9 +297,10 @@ img {
 }
 
 .contact-icon {
+  width: 15px;
+  height: 15px;
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1;
+  stroke-width: 1.8;
   text-decoration: none !important;
 }
 
