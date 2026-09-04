@@ -14,19 +14,15 @@ export const metadata: Metadata = {
     default: 'Lucas Candon-Campos',
     template: '%s | Lucas Candon-Campos',
   },
-  description:
-    'I build products at the intersection of AI, data, and people.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Lucas Candon-Campos',
-    description: 'I build products at the intersection of AI, data, and people.',
     type: 'website',
     images: [{ url: '/og.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Lucas Candon-Campos',
-    description: 'I build products at the intersection of AI, data, and people.',
     images: ['/og.png'],
   },
 };

@@ -50,9 +50,6 @@ export function SiteFooter() {
             </a>
           </li>
         </ul>
-        <p className="footer-description">
-          I build products at the intersection of AI, data, and people.
-        </p>
       </div>
     </footer>
   );

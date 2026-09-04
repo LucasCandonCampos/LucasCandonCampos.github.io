@@ -304,10 +304,6 @@ img {
   text-decoration: none !important;
 }
 
-.footer-description {
-  margin: 0;
-}
-
 @media screen and (max-width: 800px) {
   .wrapper {
     max-width: calc(800px - 30px / 2);
